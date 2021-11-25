@@ -66,6 +66,8 @@ namespace SslStreamPerf
                         messageByteCount = 0;
                         offset += index + 1;
                         count -= index + 1;
+
+                        await Task.Yield();
                     }
                 }
             }

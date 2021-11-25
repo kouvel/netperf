@@ -29,6 +29,8 @@ namespace SslStreamPerf
                 {
                     await _stream.WriteAsync(_messageBuffer, 0, _messageBuffer.Length);
 
+                    await Task.Yield();
+
                     int messageBytes = await ReceiveMessage();
                     if (messageBytes == 0)
                     {
